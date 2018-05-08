@@ -187,6 +187,9 @@ Please also note that the mac address listed in this config file is an example. 
 
 > Start the app by entering
 
+```json
+see shell tab
+```
 ```shell
 $ node streembit --pwd=PASSWORD
 # or
@@ -213,6 +216,9 @@ At the CLI to allow command prompt input set the "cmdinput" parameter to "true" 
 
 > Restart the app with the following command
 
+```json
+see shell tab
+```
 ```shell
 $ node streembit --pwd=PASSWORD --data
 ```
