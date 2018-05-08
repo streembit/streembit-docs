@@ -15,11 +15,13 @@ There are resources available in this guide to assist with the set-up which shal
   * Zovolt Gateway - [Streembit R-Pi hat / Expansion board](http://zovolt.com/e-shop/pis-hat)
   * Ethernet cable - recommended to connect R-Pi to router
   * A working Internet connection
+  
+  Optional items used to prepare unconfigured Zovolt Gateway Board are listed below
+  
   * [FTDI](http://zovolt.com/e-shop/ftdi) - module to program Zigbee chip on Zovolt Board
   * Jumper wires connectors (man-female) for connecting FTDI module to Zovolt board
   * Mini-B - USB cable for connecting FTDI module to configuration Laptop
 
-Optional items to prepare unconfigured Zovolt Gateway Board
 
 ## Understanding the fundamentals of the Streembit platform
 
