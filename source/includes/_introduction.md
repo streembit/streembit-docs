@@ -10,12 +10,12 @@ There are resources available in this guide to assist with the set-up which shal
 
 ## Required Hardware
 
-  * Raspberry - [http://zovolt.com/e-shop/pi-b](Pi model 3B)
-  * SD card for [http://zovolt.com/e-shop/pis](Raspberry Pi)
-  * Zovolt Gateway - [http://zovolt.com/e-shop/pis-hat](Streembit R-Pi hat / Expansion board)
+  * Raspberry - [Pi model 3B](http://zovolt.com/e-shop/pi-b)
+  * SD card for [Raspberry Pi](http://zovolt.com/e-shop/pis)
+  * Zovolt Gateway - [Streembit R-Pi hat / Expansion board](http://zovolt.com/e-shop/pis-hat)
   * Ethernet cable - recommended to connect R-Pi to router
   * A working Internet connection
-  * [http://zovolt.com/e-shop/ftdi](FTDI) - module to program Zigbee chip on Zovolt Board
+  * [FTDI](http://zovolt.com/e-shop/ftdi) - module to program Zigbee chip on Zovolt Board
   * Jumper wires connectors (man-female) for connecting FTDI module to Zovolt board
   * Mini-B - USB cable for connecting FTDI module to configuration Laptop
 
@@ -29,7 +29,7 @@ Before we start it is beneficial to familiarize yourself with the architecture a
 Platform is made up a nodes, which can take on different roles depending on the ‘use’ case -  It is therefore important to ensure you follow the correct areas of the Readme documentation and config file examples in this repository for creating an Streembit IOT private network.
 
 **The Streembit UI** (User Interface)
-Can be run as an application or a web server.  Zovolt Ltd has made this available for IOT developers at [https://streembit.co](https://streembit.co) where you can create an account and complete the setup process, once the Streembit CLI - Command Line Interface node is set up on the Raspberry Pi.
+Can be run as an application or a web server.  Zovolt Ltd has made this available for IOT developers at [streembit.co](https://streembit.co) where you can create an account and complete the setup process, once the Streembit CLI - Command Line Interface node is set up on the Raspberry Pi.
 
 **The Streembit CLI** (Command Line Interface)
 This element of the Streembit network can be set up as a node to perform different roles within the Streembit network
@@ -47,4 +47,4 @@ Once you have assembled the acquired hardware and are ready to set up the Streem
 
 The following steps should allow the user to efficiently set up Streembit IOT
 
-In the **initial step** please create an user account at [https://www.streembit.co](https://www.streembit.co) if you do not have one.  This is the user interface that you can use to quickly set up our IOT network.
+In the **initial step** please create an user account at [streembit.co](https://www.streembit.co) if you do not have one.  This is the user interface that you can use to quickly set up our IOT network.
