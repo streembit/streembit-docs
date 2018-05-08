@@ -23,10 +23,10 @@ GND (black) | Pin 5
 The pictures display the FTDI and gateway wires.
 
 Jumper wires connecting the FTDI module
-(./images/ftdi_to_gateway_pins.png "Jumper wires connecting the FTDI module")
+![alt text](./images/ftdi_to_gateway_pins.png "Jumper wires connecting the FTDI module")
 
 Jumper wires connecting to the Zovolt Gateway Board
-(./images/gateway_to_ftdi_pins.png "Jumper wires connecting to the Zovolt Gateway Board")
+![alt text](./images/gateway_to_ftdi_pins.png "Jumper wires connecting to the Zovolt Gateway Board")
 
 ### Write settings to the XBEE module
 

@@ -19,7 +19,7 @@ see shell code
 ```shell
 sudo raspi-config
 ```
-Login to the Raspberry PI via SSH using your Linux/MAC SSH client or PUTTY on Windows. If you don't have access to the router to lookup the IP address, use the Advanced IP Scanner application to find your Raspberry PI device [http://www.advanced-ip-scanner.com](http://www.advanced-ip-scanner.com).
+Login to the Raspberry PI via SSH using your Linux/MAC SSH client or PUTTY on Windows. If you don't have access to the router to lookup the IP address, use the Advanced IP Scanner application to find your Raspberry PI device [www.advanced-ip-scanner.com](http://www.advanced-ip-scanner.com).
 The default **user name**: *pi*, **password**: *raspberry*.
 
 Once you logged in via SSH:
