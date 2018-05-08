@@ -185,41 +185,40 @@ Please also note that the mac address listed in this config file is an example. 
 
 ## Step 3
 
-> Start the app by entering
-
 ```json
 see shell tab
 ```
 ```shell
+# Start the app by entering
 $ node streembit --pwd=PASSWORD
 # or
 $ node streembit --pwd=PASSWORD --cmd
-```
-> corresponding to a chosen way of initialization
-> next, Enter
 
-```shell
+# corresponding to a chosen way of initialization
+# next, Enter
 user
-```
-> then
 
-```shell
+# then
 add
+
+# and follow the prompts you see on a screen
 ```
-> and follow the prompts you see on a screen. Public key is the only mandatory field and you should fill it with your PKI public key of your account set up which was copied from the Streembit UI.
 
 To allow connection to this IoT CLI instance, a user must be defined and saved in the CLI local database.
 In order to do this, open your Streembit UI, open "Tools" > "Account/network info" and copy the public key value.
 At the CLI to allow command prompt input set the "cmdinput" parameter to "true" or use "--cmd" flag.
 
-## Step 4
+<aside class="notice">
+Public key is the only mandatory field and you should fill it with your PKI public key of your account set up which was copied from the Streembit UI.
+</aside>
 
-> Restart the app with the following command
+## Step 4
 
 ```json
 see shell tab
 ```
 ```shell
+# Restart the app with the following command
 $ node streembit --pwd=PASSWORD --data
 ```
 
