@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 The Streembit IOT gateway developer kit allows qualified users to set up a Peer 2 Peer communication network that is secure and can control Home Automation Zigbee standard devices. This solution brings a high level of security which exists already within the Streembit communication network platform.
 
@@ -8,22 +8,22 @@ There are a number of specific configuration requirements and also instructions 
 
 There are resources available in this guide to assist with the set-up which shall be listed here, along with the required hardware components.
 
-## Required Hardware
+### Required Hardware
 
   * Raspberry - [Pi model 3B](http://zovolt.com/e-shop/pi-b)
   * SD card for [Raspberry Pi](http://zovolt.com/e-shop/pis)
   * Zovolt Gateway - [Streembit R-Pi hat / Expansion board](http://zovolt.com/e-shop/pis-hat)
   * Ethernet cable - recommended to connect R-Pi to router
   * A working Internet connection
-  
+
   Optional items used to prepare unconfigured Zovolt Gateway Board are listed below
-  
+
   * [FTDI](http://zovolt.com/e-shop/ftdi) - module to program Zigbee chip on Zovolt Board
   * Jumper wires connectors (man-female) for connecting FTDI module to Zovolt board
   * Mini-B - USB cable for connecting FTDI module to configuration Laptop
 
 
-## Understanding the fundamentals of the Streembit platform
+### Understanding the fundamentals of the Streembit platform
 
 Before we start it is beneficial to familiarize yourself with the architecture and terminology of components both hardware and software to set up a working Streembit Network
 

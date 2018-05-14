@@ -1,8 +1,8 @@
-# Raspberry Pi - Preparation
+## Raspberry Pi - Preparation
 
 Here you will find the instructions and some additional links to setup the Raspberry Pi ready to install and run the Streembit CLI application.  You may prefer to attach separate screen and keyboard to the R-Pi instead of using SSH to connect to it.
 
-## Install the Raspberry PI
+### Install the Raspberry PI
 
 Burn the latest Raspbian OS to a micro SD card.
 
@@ -11,7 +11,7 @@ Burn the latest Raspbian OS to a micro SD card.
 Add an ssh file to the Raspbian boot image at the SD card. Step 3 in this tutorial:
 [https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0](https://hackernoon.com/raspberry-pi-headless-install-462ccabd75d0)
 
-## Login via SSH and configure the device
+### Login via SSH and configure the device
 
 ```json
 see shell code
@@ -37,7 +37,7 @@ ls -l /dev
 Check the available serial ports and serial port aliases.
 ttyS0 should be listed in dev directory
 
-## Install the latest Nodejs
+### Install the latest Nodejs
 
 ```json
 see shell code
@@ -90,7 +90,7 @@ see shell code
 ```shell
 sudo npm install -g pm2
 ```
-## Install PM2 process manager
+### Install PM2 process manager
 
 ```json
 see shell code
@@ -99,7 +99,7 @@ see shell code
 sudo apt-get install git
 ```
 
-## Install git
+### Install git
 
 ```json
 see shell code
@@ -111,7 +111,7 @@ git clone https://github.com/streembit/streembit-cli
 cd streembit-cli
 ```
 
-## Connect to a WiFi network
+### Connect to a WiFi network
 
 ```json
 see shell code
@@ -141,6 +141,8 @@ network={
 }
 
 ifconfig wlan0
+
+# You should see something that resembles this output
 
 wlan0   Link encap:Ethernet HWaddr 74:da:38:2b:1c:3d
         inet addr:192.168.1.216 Bcast:192.168.1.255 Mask:255.255.255.0

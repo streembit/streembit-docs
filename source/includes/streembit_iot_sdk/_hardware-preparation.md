@@ -1,4 +1,4 @@
-# Hardware preparation
+## Hardware preparation
 
 ### Zovolt gateway preparation
 

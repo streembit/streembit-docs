@@ -1,4 +1,4 @@
-# Software Preparation
+## Software Preparation
 
 > Example config file
 
@@ -160,7 +160,7 @@ The key data item which need’s modifying on this config file for your specific
 The long string is the mac address of the board.
 Key to this information is to use lower case letters when editing the file. We find that despite the labels using upper case letters, the code relating to these identifiers for the mac address of the chip/board is most often lower case lettering.  - creating a mismatch in upper and lower case lettering can create additional bugs and unpredictable operation of the CLI application.
 
-## Step 1
+### Step 1
 
 Since we are using encrypted connections which appear as WSS and HTTPS, the corresponding configuration is required in the config.json file.
 Generate or obtain SSL certificates for your domain and include the certificate files in the ssl folder.
@@ -170,7 +170,7 @@ Generate or obtain SSL certificates for your domain and include the certificate 
    - Certificate: ssl/DOMAIN.crt
    - Key: ssl/DOMAIN.key
 
-## Step 2
+### Step 2
 
 Make sure you modify your *config.json* to resemble example above
 
@@ -183,7 +183,7 @@ For IoT the node: the *transport.host* field can be one of the following:
 Notice that we are using domain names instead of IP addresses for the ssl cert configuration. This is important. Also there must be at least one valid seed, as well as run value in Client and IOT modules set to "*true*".
 Please also note that the mac address listed in this config file is an example. You will need to use the mac address which is defined on the Zovolt board ‘Zigbee’ Radio chip.
 
-## Step 3
+### Step 3
 
 ```json
 see shell tab
@@ -197,11 +197,10 @@ $ node streembit --pwd=PASSWORD --cmd
 # corresponding to a chosen way of initialization
 # next, Enter
 user
-
 # then
 add
 
-# and follow the prompts you see on a screen
+# ... and follow the prompts you see on a screen
 ```
 
 To allow connection to this IoT CLI instance, a user must be defined and saved in the CLI local database.
@@ -212,7 +211,7 @@ At the CLI to allow command prompt input set the "cmdinput" parameter to "true" 
 Public key is the only mandatory field and you should fill it with your PKI public key of your account set up which was copied from the Streembit UI.
 </aside>
 
-## Step 4
+### Step 4
 
 ```json
 see shell tab
