@@ -117,24 +117,13 @@ cd streembit-cli
 see shell code
 ```
 ```shell
-sudo iwlist wlan0 scan
-```
 
-> List the available WiFi networks
+# List the available WiFi networks
 
-
-```json
-see shell code
-```
-```shell
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
-```
-> Edit the WiFi configuration file
 
-```json
-see shell code
-```
-```shell
+# Edit the WiFi configuration file
+
 network={
     ssid="YOUR_WIFI_NETWORK"
     psk="WIFI_NETWORK_PASSWORD"

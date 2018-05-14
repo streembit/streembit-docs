@@ -1,66 +1,85 @@
 ## Software Preparation
 
-> Example config file
+Follow the instructions to set up the CLI so that it can communicate securely with [https://www.streembit.co/](https://www.streembit.co/)  the user interface for IOT. It is important to understand that in order for the communication to function with the UI at the secure website of [https://www.streembit.co/](https://www.streembit.co/) we need to apply the SSL certificates into the root directory of the CLI and also make sure that the domain linked to the certificates is accurately referenced in the SSL module on the Config file.
+
+In “step 3” you will notice this command
+`$ node streembit --pwd=PASSWORD`
+You may notice that instead of PASSWORD you will need to create your own password which is compliant in length and has upper, lower case letters and a number at least.
+
+Adding the user public key from your account at [https://www.streembit.co/](https://www.streembit.co/) requires to follow the `user`  `add`  detailed in step 3 below.
 
 ```json
+# having CMD set to true
 {
-   "database_name": "dbsql",
-   "cmdinput": false,
-   "seeds": [
-		{
-            "host": "seed.domain.se",
-            "port": 32319
-        }
-   ],
-   "transport": {
-        "protocol": "http",
-        "host": "",
-        "port": 32319,
-        "ws": {
-            "port": 32320
-        },
-        "ssl": false,
-        "ca": "PATH_TO/DOMAIN.ca-bundle.crt",
-        "cert": "PATH_TO/DOMAIN.crt",
-        "key": "PATH_TO/DOMAIN.key"
-   },
-   "limits": {
-        "refresh": 3600,
-        "replicate": 3600,
-        "republish": 86400,
-        "expire": 86405,
-        "timeout": 5
-   },
-   "modules": [
-       {
-           "name": "seed",
-           "run": false
-       },
-       {
-           "name": "client",
-           "run": true
-       },
-       {
-           "name": "blockchain",
-           "run": false
-       },
-       {
+  "database_name": "streembit",
+  "cmdinput": true,
+  "seeds": [
+    {
+      "host": "seed.streembit.uk",
+      "port": 32319
+    }
+  ]
+...
+```
+```shell
+see json tab
+```
+
+JSON code to the right shows the config file - which needs the  CMD set to true before running streembit cli on the raspberry pi to allow you to enter commands such as adding a user.
+
+<aside class="notice">
+You can also use `--cmd` flag in command line. the app started this way (so, `$ node streembit --pwd=PASSWORD --cmd`) will always bring up command line interface, independently of value of the "cmdinput" flag
+</aside>
+
+*Fig 1*. - Shows the UI view showing the public key which is needed to set up the user account on the CLI.  The Public key is a long string of characters - in Fig 2 below it starts with 049085a5
+
+![alt text](./images/ui_pub_key.png "Public key on UI")
+
+Follow the instructions carefully on step 4.
+
+*Fig 2*. - Once you have got the relevant data you can then set up the IOT hub at UI [https://www.streembit.co/](https://www.streembit.co/)
+
+![alt text](./images/iot_hub.png "Setup IoT Hub on UI")
+
+<aside class="notice">
+**Points of note in the config file**
+The config file is the most likely source of any issues preventing the creation of the Peer to Peer secure Streembit IOT network. Incorrect setting of the flags ***true/false*** or typo’s in the syntax will prevent the application either running or connecting.
+</aside>
+
+Below are some guidance notes on how to view and interpret the elements of the Config file and the consequences of inputting this data incorrectly.
+
+### Setting the flags
+
+JSON you see to the right shows how we are setting the flags
+
+```json
+...
+{
            "name": "iot",
            "run": true,
            "serialport": "/dev/ttySO",
-           "protocols": [
-               {
-                   "name": "zigbee",
-                   "chipset": "xbee"
-               },
-               {
-                   "name": "zwave"
-               },
-               {
-                   "name": "6lowpan"
-               }
-           ],
-           "devices": [
+...
+```
+```shell
+see json tab
+```
+
+Making sure the IOT module detailed above needs to be set to true on the config file.  Also the “serialport” needs to match the naming convention of the Raspberry Pi serial port, which is listed above.  On certain config file examples you may see it listed as “com 3”  which is correct syntax for windows machines
+
+The other modules in the config file then need to be set to false except for the following
+
+    * SSL = true
+    * Client = true
+    * NFC = true
+    * Dns = true
+
+### Setting the mac address of the Zovolt Board
+
+The config file requires the personalization of the *Zovolt expansion board / Hat* which is connected to the Pi via the usual serial block connector. This is done through the use of the *mac* address of the board and linked to the Zigbee radio chip on the board.
+
+```json
+...
+"devices": [
                {
                    "type": 1,
                    "protocol": "zigbee",
@@ -79,77 +98,13 @@
                    }
                }
            ]
-       },
-       {
-           "name": "dns",
-           "run": true,
-           "host": "IP_ADDRESS",
-           "port": 8080
-       }
-   ],
-   "log": {
-       "level": "debug",
-       "logs_dir": "logs"
-   }
-}
+...
 ```
 ```shell
 see json tab
 ```
 
-Follow the instructions to set up the CLI so that it can communicate securely with [https://www.streembit.co/](https://www.streembit.co/)  the user interface for IOT. It is important to understand that in order for the communication to function with the UI at the secure website of [https://www.streembit.co/](https://www.streembit.co/) we need to apply the SSL certificates into the root directory of the CLI and also make sure that the domain linked to the certificates is accurately referenced in the SSL module on the Config file.
-
-In “step 3” you will notice this command
-`$ node streembit --pwd=PASSWORD`
-You may notice that instead of PASSWORD you will need to create your own password which is compliant in length and has upper, lower case letters and a number at least.
-
-Adding the user public key from your account at [https://www.streembit.co/](https://www.streembit.co/) requires to follow the `user`  `add`  detailed in step 3 below.
-
-*Fig 1*. - Shows the config file - which needs the  CMD set to true before running streembit cli on the raspberry pi to allow you to enter commands such as adding a user.
-
-![alt text](./images/config-cmdinput.png "cmdinput set to true in config.json")
-
-<aside class="notice">
-You can also use `--cmd` flag in command line. the app started this way (so, `$ node streembit --pwd=PASSWORD --cmd`) will always bring up command line interface, independently of value of the "cmdinput" flag
-</aside>
-
-*Fig 2*. - Shows the UI view showing the public key which is needed to set up the user account on the CLI.  The Public key is a long string of characters - in Fig 2 below it starts with 049085a5
-
-![alt text](./images/ui_pub_key.png "Public key on UI")
-
-Follow the instructions carefully on step 4.
-
-*Fig 3*. - Once you have got the relevant data you can then set up the IOT hub at UI [https://www.streembit.co/](https://www.streembit.co/)
-
-![alt text](./images/iot_hub.png "Setup IoT Hub on UI")
-
-<aside class="notice">
-**Points of note in the config file**
-The config file is the most likely source of any issues preventing the creation of the Peer to Peer secure Streembit IOT network. Incorrect setting of the flags ***true/false*** or typo’s in the syntax will prevent the application either running or connecting.
-</aside>
-
-Below are some guidance notes on how to view and interpret the elements of the Config file and the consequences of inputting this data incorrectly.
-
-### Setting the flags
-
-*Fig 4*. - Setting the flags
-
-![alt text](./images/setting_flags.png "Setup IoT Hub on UI")
-
-Making sure the IOT module detailed above needs to be set to true on the config file.  Also the “serialport” needs to match the naming convention of the Raspberry Pi serial port, which is listed above.  On certain config file examples you may see it listed as “com 3”  which is correct syntax for windows machines
-
-The other modules in the config file then need to be set to false except for the following
-
-    * SSL = true
-    * Client = true
-    * NFC = true
-    * Dns = true
-
-### Setting the mac address of the Zovolt Board
-
-The config file requires the personalization of the *Zovolt expansion board / Hat* which is connected to the Pi via the usual serial block connector. This is done through the use of the *mac* address of the board and linked to the Zigbee radio chip on the board.
-
-*Fig 5*. - An example on the IOT module of the config is shown below
+JSON you see to the right shows an example on the IOT module of the config is shown below
 
 ![alt text](./images/iot_module.png "Example of IoT module")
 
@@ -226,3 +181,5 @@ Once the user is successfully added, stop the cli app. Open config.json and chan
 Copy the value of the *BS58 public key* of the hub (must be the last string of the output, or close to the last).
 At the Streembit UI you must add this Hub to your IoT Hub list. Click on the "IoT Devices" menu item and click on "Create IoT Hub". Enter the IoT device ID. This is usually the Zigbee MAC of your device that sits top on the Streembit-cli Raspberry Pi (such as the Zovolt Zigbee gateway). Enter the device name and copy the BS58 public key of the streembit-cli that you gathered in the previous step. Click on Save and the web application should connect to your streembit-cli IoT instance.
 The created IoT Hub should appear on the devices view that is accessible from the "My devices" link.
+
+
