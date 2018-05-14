@@ -182,4 +182,98 @@ Copy the value of the *BS58 public key* of the hub (must be the last string of t
 At the Streembit UI you must add this Hub to your IoT Hub list. Click on the "IoT Devices" menu item and click on "Create IoT Hub". Enter the IoT device ID. This is usually the Zigbee MAC of your device that sits top on the Streembit-cli Raspberry Pi (such as the Zovolt Zigbee gateway). Enter the device name and copy the BS58 public key of the streembit-cli that you gathered in the previous step. Click on Save and the web application should connect to your streembit-cli IoT instance.
 The created IoT Hub should appear on the devices view that is accessible from the "My devices" link.
 
-
+```json
+# Sample config file
+{
+   "database_name": "dbsql",
+   "cmdinput": false,
+   "seeds": [
+		{
+            "host": "seed.domain.se",
+            "port": 32319
+        }
+   ],
+   "transport": {
+        "protocol": "http",
+        "host": "",
+        "port": 32319,
+        "ws": {
+            "port": 32320
+        },
+        "ssl": false,
+        "ca": "PATH_TO/DOMAIN.ca-bundle.crt",
+        "cert": "PATH_TO/DOMAIN.crt",
+        "key": "PATH_TO/DOMAIN.key"
+   },
+   "limits": {
+        "refresh": 3600,
+        "replicate": 3600,
+        "republish": 86400,
+        "expire": 86405,
+        "timeout": 5
+   },
+   "modules": [
+       {
+           "name": "seed",
+           "run": false
+       },
+       {
+           "name": "client",
+           "run": true
+       },
+       {
+           "name": "blockchain",
+           "run": false
+       },
+       {
+           "name": "iot",
+           "run": true,
+           "serialport": "/dev/ttySO",
+           "protocols": [
+               {
+                   "name": "zigbee",
+                   "chipset": "xbee"
+               },
+               {
+                   "name": "zwave"
+               },
+               {
+                   "name": "6lowpan"
+               }
+           ],
+           "devices": [
+               {
+                   "type": 1,
+                   "protocol": "zigbee",
+                   "mcu": "xbee",
+                   "id": "MAC_ID",
+                   "name": "My Hub",
+                   "permission": 1,
+                   "details": {
+                       "manufacturername": "ZoVolt",
+                       "modelidentifier": "ZOVOLT-P2PIOTHUB-01",
+                       "hwversion": "0001",
+                       "protocol": "Zigbee",
+                       "security": "ECC PPKI",
+                       "NFC": true,
+                       "endpoint": 2
+                   }
+               }
+           ]
+       },
+       {
+           "name": "dns",
+           "run": true,
+           "host": "IP_ADDRESS",
+           "port": 8080
+       }
+   ],
+   "log": {
+       "level": "debug",
+       "logs_dir": "logs"
+   }
+}
+```
+```shell
+see json tab
+```
