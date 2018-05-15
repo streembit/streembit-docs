@@ -43,21 +43,38 @@ ttyS0 should be listed in dev directory
 see shell code
 ```
 ```shell
+# Install with package manager
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
 **Option 1**
 
-Install Node.js with APT package manager
+Install Nodejs with APT package manager
 
-
-**Option 2**
 
 ```json
 see shell code
 ```
 ```shell
+# Install with NVM
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+
+# Now close you terminal and then open it up again
+# to make nvm command available
+nvm install --lts
+```
+
+**Option 2**
+
+Install Nodejs with NVM (Node Version Manager)
+
+
+```json
+see shell code
+```
+```shell
+# Install from sources
 sudo apt-get update
 sudo apt-get install build-essential checkinstall
 cd /usr/local/src
@@ -79,37 +96,38 @@ node -v
 sudo npm install -g npm
 ```
 
+**Option 3**
+
 Install Node.js from source
 
 The version should be at minimum 9.10.0
 
 
-```json
-see shell code
-```
-```shell
-sudo npm install -g pm2
-```
 ### Install PM2 process manager
 
 ```json
 see shell code
 ```
 ```shell
-sudo apt-get install git
+# Install pm2 globally
+sudo npm install -g pm2
 ```
 
-### Install git
+
+### Install git and clone CLI repository
 
 ```json
 see shell code
 ```
 ```shell
-# just arbitrary folder on a server where you have r/w permissions
+sudo apt-get install git
+
+# cd to arbitrary folder on which you have r/w permissions
 cd /FOLDER/OF/DEPLOY
 git clone https://github.com/streembit/streembit-cli
 cd streembit-cli
 ```
+
 
 ### Connect to a WiFi network
 
