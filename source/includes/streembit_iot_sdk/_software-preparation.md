@@ -138,7 +138,6 @@ Key to this information is to use lower case letters when editing the file. We f
 ### Step 1
 
 *Option 1. With a domain and SSL certificates, via HTTPS.*
----
 
 The connection between the UI and the gateway are WSS and HTTPS. Therefore SSL certificates must be deployed and configured on the gateway. The configuration must be saved in the config.json file.
 
