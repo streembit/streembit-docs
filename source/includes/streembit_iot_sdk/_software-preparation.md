@@ -150,6 +150,7 @@ First obtain an SSL certificate for your domain name from a third party certific
  - Key: ssl/DOMAIN.key
 
 Adjust corresponding section in the configuration file to look like this:
+
 ```json
 "transport": {
 ...
@@ -159,15 +160,22 @@ Adjust corresponding section in the configuration file to look like this:
     "key": "ssl/DOMAIN.key"
 }
 ```
+```shell
+see json tab
+```
 
 *Option 2. Without SSL, via HTTP*
 
 The transport section in config.json file must be configured the following:
+
 ```json
 "transport": {
 ...
 	"ssl": false
 }
+```
+```shell
+see json tab
 ```
 
 ### Step 2
