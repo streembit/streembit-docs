@@ -152,6 +152,7 @@ First obtain an SSL certificate for your domain name from a third party certific
 Adjust corresponding section in the configuration file to look like this:
 
 ```json
+# Option 1. with SSL
 "transport": {
 ...
 	"ssl": true,
@@ -169,6 +170,7 @@ see json tab
 The transport section in config.json file must be configured the following:
 
 ```json
+# Option 2. Without SSL
 "transport": {
 ...
 	"ssl": false
