@@ -1,4 +1,4 @@
-## Dependencies**
+## Dependencies
 
 ```json
 see shell code

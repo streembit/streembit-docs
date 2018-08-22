@@ -10,7 +10,7 @@ Set the "cmdinput" field to true in the config.json configuration file to intiat
 see shell code
 ```
 ```shell
-$ usr
+usr
 ```
 
 Enter the "usr" command type at the command prompt.
@@ -19,8 +19,9 @@ Enter the "usr" command type at the command prompt.
 see shell code
 ```
 ```shell
-$ add
+add
+```
 
-```The "Enter users command:" prompt will appear. Enter "add" to the command prompt.
+The "Enter users command:" prompt will appear. Enter "add" to the command prompt.
 
 Answer the prompt by typing the user name, public key, whether or not the user is an admin (1 or 0 value). The public key is the long PKI public key format that you can get from the Public key column of the "Account/network info" view, accessbile from the "Tools" menu at the Streembit UI application.
