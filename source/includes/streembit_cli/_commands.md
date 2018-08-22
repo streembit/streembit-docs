@@ -1,4 +1,6 @@
-## Command line interface
+## Commands
+
+**Command line interface**
 
 Set the "cmdinput" field to true in the config.json configuration file to intiate the command line handler. The command line handler accepts commands from the terminal. In "cmdinput" mode once the application is initialized there is a command prompt displayed: "Enter command type:"
 
