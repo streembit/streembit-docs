@@ -7,6 +7,7 @@ it sends one command at a time to the streembit-cli application running in **Blo
 **Blockchain Node** in turn processes this command and sends back output that will be displayed on the client's side
 
 ```json
+        'addmultisigaddress',
         'backupwallet',
         'createrawtransaction',
         'decoderawtransaction',
@@ -63,6 +64,8 @@ We consider default Blockchain node's port to be 32319. If you have your node ru
 use **--rpcport** flag that will provide the client with the correct port number.
 
 All these RPC related flags are followed by a **command** and parameters if the command requires the parameters.
+
+
 
 ```json
 see shell tab
