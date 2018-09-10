@@ -3,7 +3,8 @@
 No special configuration required to run streembit-cli in "Blockchain Client" mode. All it takes to execute blockchain
 command is to properly write such a command in console/terminal.
 If you familiar with **Bitcoin**'s native *bitcoin-cli* command line application you have an idea on how the client is working.
-It executes one command at a time and displays output if the **Blockchain Server** sent such.
+it sends one command at a time to the streembit-cli application running in **Blockchain Node** mode.
+**Blockchain Node** in turn processes this command and sends back output that will be displayed on the client's side
 
 ```json
         'backupwallet',
@@ -48,16 +49,17 @@ It executes one command at a time and displays output if the **Blockchain Server
         'verifymessage'
 ```
 ```shell
-node streembit --rpcuser=youruser --rpcpassword=yourpassword getbalance account_username
+node streembit --rpcuser=youruser --rpcpassword=yourpassword COMMAND PARAM1 PARAM2 ...
 ```
 
-Here is the list of commands currently supported by streembit-cli running in Blockchain Client mode:
+Here in the json tab you can see the list of commands currently supported by streembit-cli running in **Blockchain Client** mode.
 
-And the shell tab to the right contains and example usage of a command.
+Shell tab to the right contains a template that you can use to compile a valid blockchain command
+
 You must include **--rpcuser** and **--rpcpassword** flags and values of these must be equal to the corresponding ones
-defined on server side.
+defined on Blockchain node side.
 
-We consider default Blockchain server port to be 32319. If you have your server running on different port, then please
+We consider default Blockchain node's port to be 32319. If you have your node running on different port, then please
 use **--rpcport** flag that will provide the client with the correct port number.
 
 All these RPC related flags are followed by a **command** and parameters if the command requires the parameters.
@@ -69,6 +71,6 @@ see shell tab
 node streembit --rpcuser=youruser --rpcpassword=yourpassword help
 ```
 
-You can also see a short *help* by entering:
+You can also see a short *help* by entering
 
 Please, notice that running streembit-cli in Blockchain Client mode does not require **--pwd** flag (so, password)
