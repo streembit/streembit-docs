@@ -22,6 +22,6 @@ and then down to blockchain module. Turn run value to be "true" and add the foll
 pairs to this section (see the example in json tab to the right).
 
 Where,<br />
-*rpcuser* - username that will be compared to the corresponding value in a request from Blockchain client<br />
-*rpcpassword* - password that will be compared to the corresponding value in a request from Blockchain client<br />
+*rpcuser* - username that will be compared to a corresponding value in the request from Blockchain client<br />
+*rpcpassword* - password that will be compared to a corresponding value in the request from Blockchain client<br />
 *rpcallowip* - this is a list of IP address that we will consider as clients with with request privileges granted
