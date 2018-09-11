@@ -1,9 +1,9 @@
-## Blockchain Client
-
 <aside class="notice">
 The RPC commands follow the Bitcoin RPC command naming convention.<br />
 To understand what the commands do please refer the the Bitcoin RPC command documentation.
 </aside>
+
+## Blockchain Client
 
 No special configuration required to run streembit-cli in "Blockchain Client" mode. All it takes to execute blockchain
 command is to properly write such a command in console/terminal.
