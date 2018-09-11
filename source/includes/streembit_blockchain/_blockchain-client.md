@@ -1,5 +1,12 @@
 ## Blockchain Client
 
+<br />
+
+> The RPC commands follow the Bitcoin RPC command naming convention.
+> To understand what the commands do please refer the the Bitcoin RPC command documentation.
+
+<br/>
+
 No special configuration required to run streembit-cli in "Blockchain Client" mode. All it takes to execute blockchain
 command is to properly write such a command in console/terminal.
 If you familiar with **Bitcoin**'s native *bitcoin-cli* command line application you have an idea on how the client is working.
